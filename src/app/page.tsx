@@ -1,5 +1,5 @@
 'use client';
-
+import Planos from "@/components/Planos/Planos";
 import React, { useState, useEffect } from 'react';
 import Esquecimento from "@/components/Esquecimento/Esquecimento";
 import Metodo from "@/components/Metodo/Metodo";
