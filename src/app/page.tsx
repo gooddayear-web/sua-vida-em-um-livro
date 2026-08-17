@@ -1,4 +1,8 @@
-'use client';
+'use client';'use client';
+
+import React, { useState, useEffect } from 'react';
+import Esquecimento from "@/components/esquecimento/Esquecimento";
+import Metodo from "@/components/Metodo/Metodo";
 
 import React, { useState, useEffect } from 'react';
 
@@ -687,4 +691,3 @@ export default function Home() {
     </main>
   );
 }
-import Metodo from "@/components/Metodo/Metodo";
