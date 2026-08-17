@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "https://suavidaemumlivro.com.br/images/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Sua Vida em um Livro™",
