@@ -122,7 +122,7 @@ export default function Home() {
           </div>
 
           <button
-            onClick={() => handleOpenModal('Contato pelo Hero')}
+            onClick={() => handleOpenModal('Projeto Personalizado')}
             className="hidden md:inline-block bg-[#B87333] text-white text-sm md:text-base tracking-[0.2em] uppercase px-12 py-5 transition-all duration-700 hover:bg-[#B87333]/90 shadow-2xl cursor-pointer font-light"
           >
             Quero Preservar Minha História
