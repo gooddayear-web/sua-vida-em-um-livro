@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { planosContent } from '@/content/src/content/planos';
+import { planosContent } from '@/content/planos';
 
 interface PlanosProps {
   onSelectPlan: (planName: string) => void;

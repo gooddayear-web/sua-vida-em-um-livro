@@ -1,8 +1,10 @@
 'use client';
-import Planos from "@/components/Planos/Planos";
+
 import React, { useState, useEffect } from 'react';
 import Esquecimento from "@/components/Esquecimento/Esquecimento";
 import Metodo from "@/components/Metodo/Metodo";
+import Planos from "@/components/Planos/Planos";
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,7 +36,6 @@ export default function Home() {
 
     const NUMERO_WHATSAPP = "5547991305597";
     
-    // Nova formatação da mensagem conforme a exigência 15
     const textoMensagem = `Olá!\n\nMeu nome é *${formData.name}*.\n\nAcabei de conhecer a Sua Vida em um Livro™ e gostaria de iniciar meu projeto.\n\n📖 Projeto escolhido:\n${selectedPlan}\n\n🎯 Destinado para:\n${formData.target}\n\n📖 Resumo da história:\n${formData.story}\n\n📍 Conheci vocês através de:\n${formData.origin}\n\n📧 E-mail:\n${formData.email}\n\n📱 WhatsApp:\n${formData.whatsapp}\n\nGostaria de receber mais informações sobre como preservar minha história.`;
     
     const urlWhatsApp = "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(textoMensagem);
@@ -60,7 +61,7 @@ export default function Home() {
             <span className="font-serif text-[#B87333] text-3xl">Ω</span>
           </div>
           <h1 className="font-serif text-3xl md:text-5xl font-light leading-tight">
-            Obrigado.<br />Sua história acaba de dar o primeiro passo para permanecer.
+            Origado.<br />Sua história acaba de dar o primeiro passo para permanecer.
           </h1>
           <p className="font-light text-[#FDFBF7]/80 text-lg md:text-xl leading-relaxed">
             Em instantes nossa equipe continuará esse atendimento pelo WhatsApp.<br /><br />
@@ -255,7 +256,7 @@ export default function Home() {
               <h3 className="font-serif text-2xl font-light mb-2">Aprovação do cliente</h3>
             </div>
           </div>
-          {/* Passo 7 (Centralizado na última linha em Telas Grandes) */}
+          {/* Passo 7 */}
           <div className="border border-[#B87333]/30 bg-neutral-950 p-8 flex flex-col justify-between md:col-span-2 lg:col-start-2 lg:col-span-1">
             <div>
               <span className="text-xs text-[#B87333] uppercase tracking-widest block mb-3 font-medium">07</span>
@@ -272,7 +273,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Nova Seção de Confidencialidade */}
+      {/* Seção de Confidencialidade */}
       <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center border-t border-white/10">
         <span className="text-[#B87333] uppercase tracking-[0.3em] text-xs block mb-4">Confidencialidade</span>
         <h2 className="font-serif text-3xl md:text-5xl font-light mb-8">
@@ -287,170 +288,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção PLANOS (Projetos Personalizados) */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[#B87333] uppercase tracking-[0.3em] text-xs block mb-4">Projetos Personalizados</span>
-          <h2 className="font-serif text-3xl md:text-5xl font-light mb-6">
-            Escolha a experiência ideal para preservar seu legado.
-          </h2>
-          <p className="font-light text-[#FDFBF7]/70 text-lg space-y-2">
-            Cada história possui uma profundidade diferente.<br />
-            Por isso cada projeto é desenvolvido sob medida.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          {/* Plano Registro */}
-          <div className="border border-[#B87333]/30 bg-neutral-950 p-8 flex flex-col justify-between hover:border-[#B87333] transition-all">
-            <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#B87333] block mb-2 font-medium">Projeto Personalizado</span>
-              <h3 className="font-serif text-2xl font-light mb-1">Plano Registro</h3>
-              <p className="text-xs text-white/50 mb-4 uppercase tracking-wider">Sob Consulta</p>
-              <p className="font-light text-[#FDFBF7]/70 text-sm leading-relaxed mb-6 h-12">
-                Ideal para preservar sua história de forma objetiva.
-              </p>
-              <ul className="space-y-2 text-xs text-[#FDFBF7]/80 mb-8 border-t border-white/10 pt-4">
-                <li>✓ Método Linha do Legado™</li>
-                <li>✓ Escrita personalizada</li>
-                <li>✓ Revisão editorial</li>
-                <li>✓ Entrega digital</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleOpenModal('Plano Registro')}
-              className="w-full border border-[#B87333] text-white py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#B87333] transition-colors cursor-pointer"
-            >
-              Quero este projeto
-            </button>
-          </div>
-
-          {/* Plano Memórias */}
-          <div className="border border-[#B87333]/30 bg-neutral-950 p-8 flex flex-col justify-between hover:border-[#B87333] transition-all">
-            <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#B87333] block mb-2 font-medium">Projeto Personalizado</span>
-              <h3 className="font-serif text-2xl font-light mb-1">Plano Memórias</h3>
-              <p className="text-xs text-white/50 mb-4 uppercase tracking-wider">Sob Consulta</p>
-              <p className="font-light text-[#FDFBF7]/70 text-sm leading-relaxed mb-6 h-12">
-                Maior profundidade narrativa.
-              </p>
-              <ul className="space-y-2 text-xs text-[#FDFBF7]/80 mb-8 border-t border-white/10 pt-4">
-                <li>✓ Tudo do Registro</li>
-                <li>✓ Desenvolvimento emocional</li>
-                <li>✓ Organização detalhada</li>
-                <li>✓ Integração de fotografias</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleOpenModal('Plano Memórias')}
-              className="w-full border border-[#B87333] text-white py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#B87333] transition-colors cursor-pointer"
-            >
-              Quero este projeto
-            </button>
-          </div>
-
-          {/* Plano Legado */}
-          <div className="border border-[#B87333] bg-neutral-900/80 p-8 flex flex-col justify-between shadow-2xl relative">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#B87333] text-white text-[10px] uppercase tracking-widest px-3 py-1 font-medium">
-              Experiência Completa
-            </div>
-            <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#B87333] block mb-2 font-medium">Projeto Personalizado</span>
-              <h3 className="font-serif text-2xl font-light mb-1">Plano Legado</h3>
-              <p className="text-xs text-white/50 mb-4 uppercase tracking-wider">Sob Consulta</p>
-              <p className="font-light text-[#FDFBF7]/80 text-sm leading-relaxed mb-6 h-12">
-                Projeto completo. A experiência definitiva em preservação.
-              </p>
-              <ul className="space-y-2 text-xs text-[#FDFBF7]/90 mb-8 border-t border-white/10 pt-4">
-                <li>✓ Imersão biográfica</li>
-                <li>✓ Curadoria narrativa</li>
-                <li>✓ Linha da vida</li>
-                <li>✓ Preparação editorial premium</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleOpenModal('Plano Legado')}
-              className="w-full bg-[#B87333] text-white py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#B87333]/90 transition-colors cursor-pointer font-medium"
-            >
-              Quero este projeto
-            </button>
-          </div>
-
-          {/* Obra da Família */}
-          <div className="border border-[#B87333]/30 bg-neutral-950 p-8 flex flex-col justify-between hover:border-[#B87333] transition-all">
-            <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#B87333] block mb-2 font-medium">Genealogia & Afeto</span>
-              <h3 className="font-serif text-2xl font-light mb-1">Obra da Família</h3>
-              <p className="text-xs text-white/50 mb-4 uppercase tracking-wider">Sob Consulta</p>
-              <p className="font-light text-[#FDFBF7]/70 text-sm leading-relaxed mb-6 h-12">
-                Projetos que unem diferentes gerações em uma única obra.
-              </p>
-              <ul className="space-y-2 text-xs text-[#FDFBF7]/80 mb-8 border-t border-white/10 pt-4">
-                <li>✓ Entrevistas com múltiplos membros</li>
-                <li>✓ Pesquisa Genealógica</li>
-                <li>✓ Integração de acervo completo</li>
-                <li>✓ Obra de união e legado</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleOpenModal('Plano Obra da Família')}
-              className="w-full border border-[#B87333] text-white py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#B87333] transition-colors cursor-pointer"
-            >
-              Quero este projeto
-            </button>
-          </div>
-
-          {/* Edição de Colecionador */}
-          <div className="border border-[#B87333]/30 bg-neutral-950 p-8 flex flex-col justify-between hover:border-[#B87333] transition-all">
-            <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#B87333] block mb-2 font-medium">Exclusivo & Premium</span>
-              <h3 className="font-serif text-2xl font-light mb-1">Colecionador</h3>
-              <p className="text-xs text-white/50 mb-4 uppercase tracking-wider">Sob Consulta</p>
-              <p className="font-light text-[#FDFBF7]/70 text-sm leading-relaxed mb-6 h-12">
-                Projeto exclusivo. Acabamentos físicos de alto padrão.
-              </p>
-              <ul className="space-y-2 text-xs text-[#FDFBF7]/80 mb-8 border-t border-white/10 pt-4">
-                <li>✓ Curadoria completa</li>
-                <li>✓ Projeto gráfico diferenciado</li>
-                <li>✓ Acabamentos premium</li>
-                <li>✓ Experiência estética impecável</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleOpenModal('Plano Colecionador')}
-              className="w-full border border-[#B87333] text-white py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#B87333] transition-colors cursor-pointer"
-            >
-              Quero este projeto
-            </button>
-          </div>
-
-          {/* Linha Empresarial */}
-          <div className="border border-[#B87333]/30 bg-neutral-950 p-8 flex flex-col justify-between hover:border-[#B87333] transition-all">
-            <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#B87333] block mb-2 font-medium">Corporativo</span>
-              <h3 className="font-serif text-2xl font-light mb-1">Empresarial</h3>
-              <p className="text-xs text-white/50 mb-4 uppercase tracking-wider">Sob Consulta</p>
-              <p className="font-light text-[#FDFBF7]/70 text-sm leading-relaxed mb-6 h-12">
-                Ideal para Empresas, Fundadores, Instituições e Marcas.
-              </p>
-              <ul className="space-y-2 text-xs text-[#FDFBF7]/80 mb-8 border-t border-white/10 pt-4">
-                <li>✓ Entrevistas Institucionais</li>
-                <li>✓ Linha do Tempo Corporativa</li>
-                <li>✓ Narrativa de Cultura e Valores</li>
-                <li>✓ Projeto Editorial Organizacional</li>
-              </ul>
-            </div>
-            <button
-              onClick={() => handleOpenModal('Plano Empresarial')}
-              className="w-full border border-[#B87333] text-white py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#B87333] transition-colors cursor-pointer"
-            >
-              Solicitar proposta
-            </button>
-          </div>
-
-        </div>
-      </section>
+      {/* Seção PLANOS (Modularizada) */}
+      <Planos onSelectPlan={(planName) => handleOpenModal(planName)} />
 
       {/* Depoimentos - Em desenvolvimento */}
       <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
@@ -492,14 +331,9 @@ export default function Home() {
             <span className="text-xs uppercase tracking-widest text-white/70">Pessoas impactadas</span>
           </div>
         </div>
-        
-        {/* Futuras Implementações Placeholder - Mantido oculto no DOM para os devs */}
-        <div className="mt-16 text-center text-[10px] text-white/20 uppercase tracking-widest hidden">
-            Futuras Áreas: Depoimentos em vídeo | Casos de sucesso | Projetos executados | Mapa de atendimento nacional | FAQ | Selos de confidencialidade/LGPD | Tempo médio de desenvolvimento | Galeria de livros.
-        </div>
       </section>
 
-      {/* Nova Seção de Atendimento Nacional */}
+      {/* Seção de Atendimento Nacional */}
       <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
         <span className="text-[#B87333] uppercase tracking-[0.3em] text-xs block mb-4">Atendimento Nacional</span>
         <h2 className="font-serif text-3xl md:text-5xl font-light mb-8">
@@ -528,7 +362,7 @@ export default function Home() {
           
           <div className="pt-4 pb-12">
             <button
-              onClick={() => handleOpenModal('CTA Final')}
+              onClick={() => handleOpenModal('Projeto Personalizado')}
               className="bg-[#B87333] text-white text-sm md:text-base tracking-[0.2em] uppercase px-14 py-5 transition-all duration-700 hover:bg-[#B87333]/90 shadow-2xl cursor-pointer font-light"
             >
               Iniciar Meu Projeto
@@ -553,7 +387,7 @@ export default function Home() {
       {/* CTA Fixo Inferior Mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 h-[80px] bg-[#050505]/95 border-t border-[#B87333]/30 z-40 flex items-center px-6 backdrop-blur-md">
         <button
-          onClick={() => handleOpenModal('CTA Mobile')}
+          onClick={() => handleOpenModal('Projeto Personalizado')}
           className="w-full bg-[#B87333] text-white text-xs uppercase tracking-[0.2em] py-4 shadow-xl cursor-pointer font-medium"
         >
           Iniciar Meu Projeto
@@ -582,7 +416,6 @@ export default function Home() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               
-              {/* Exibição do Plano Escolhido */}
               <div className="bg-white/5 border border-white/10 p-4 rounded-sm text-center mb-4">
                 <span className="text-[10px] uppercase tracking-widest text-white/50 block mb-1">Plano Escolhido:</span>
                 <span className="text-[#B87333] font-serif text-lg">{selectedPlan}</span>
