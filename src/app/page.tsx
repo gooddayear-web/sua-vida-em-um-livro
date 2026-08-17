@@ -1,11 +1,8 @@
-'use client';'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
-import Esquecimento from "@/components/esquecimento/Esquecimento";
+import Esquecimento from "@/components/Esquecimento/Esquecimento";
 import Metodo from "@/components/Metodo/Metodo";
-
-import React, { useState, useEffect } from 'react';
-
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
