@@ -687,3 +687,4 @@ export default function Home() {
     </main>
   );
 }
+import Metodo from "@/components/Metodo/Metodo";
