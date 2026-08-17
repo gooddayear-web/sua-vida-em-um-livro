@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     siteName: "Sua Vida em um Livro™",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sua Vida em um Livro™",
+      },
+    ],
   },
 };
 
