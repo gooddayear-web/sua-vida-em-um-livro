@@ -303,10 +303,34 @@ export default function Home() {
               <h3 className="text-white/50 font-serif text-xl">Projeto Alessandra</h3>
               <p className="text-white/30 text-sm mt-2">Espaço reservado para foto, vídeo e depoimento</p>
           </div>
-          <div className="border border-white/10 bg-neutral-900/30 p-12 text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
-              <span className="bg-[#B87333]/20 text-[#B87333] px-3 py-1 text-[10px] uppercase tracking-widest mb-4">Em desenvolvimento</span>
-              <h3 className="text-white/50 font-serif text-xl">Projeto Marlei</h3>
-              <p className="text-white/30 text-sm mt-2">Espaço reservado para foto, vídeo e depoimento</p>
+          {/* Card 2 - Marlei da Rosa */}
+          <div className="border border-[#B87333]/40 bg-neutral-900/40 p-8 md:p-10 text-center relative overflow-hidden flex flex-col items-center justify-between min-h-[350px]">
+            <div className="flex flex-col items-center w-full">
+              
+              {/* Foto da Marlei */}
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#B87333] mb-4 shadow-xl">
+                <img 
+                  src="/images/marlei-foto.png" 
+                  alt="Marlei da Rosa" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <span className="bg-[#B87333]/20 text-[#B87333] px-3 py-1 text-[10px] uppercase tracking-widest mb-4 font-medium">
+                A Travessia Doeu
+              </span>
+
+              <p className="text-[#FDFBF7]/90 text-sm leading-relaxed italic font-serif mb-6 text-left md:text-center">
+                "Esse projeto é sensacional porque ele não apenas relata acontecimentos, mas acompanha a transformação de uma pessoa ao longo da vida, da criança que precisou sobreviver à mulher que começou a olhar para a própria história com consciência. O grande diferencial é estruturar tudo isso sem transformar a dor em espetáculo. O livro deixa de ser apenas uma autobiografia e passa a ser uma obra sobre sobrevivência, traumas, recomeço e, acima de tudo, sobre reconhecer o que nos faltou na infância para oferecermos algo diferente à geração seguinte."
+              </p>
+            </div>
+
+            <div className="border-t border-white/10 pt-4 w-full">
+              <h3 className="text-white font-serif text-lg font-medium">Marlei da Rosa</h3>
+              <p className="text-[#B87333] text-xs tracking-wider uppercase mt-1">
+                Autora
+              </p>
+            </div>
           </div>
         </div>
       </section>
