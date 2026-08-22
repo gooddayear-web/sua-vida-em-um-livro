@@ -303,7 +303,7 @@ export default function Home() {
               <h3 className="text-white/50 font-serif text-xl">Projeto Alessandra</h3>
               <p className="text-white/30 text-sm mt-2">Espaço reservado para foto, vídeo e depoimento</p>
           </div>
-          {/* Card 2 - Marlei da Rosa */}
+          {/* Card 2 - Marlei da Rosa - Terapeuta */}
           <div className="border border-[#B87333]/40 bg-neutral-900/40 p-8 md:p-10 text-center relative overflow-hidden flex flex-col items-center justify-between min-h-[350px]">
             <div className="flex flex-col items-center w-full">
               
