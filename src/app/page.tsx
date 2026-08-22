@@ -326,7 +326,7 @@ export default function Home() {
             </div>
 
             <div className="border-t border-white/10 pt-4 w-full">
-              <h3 className="text-white font-serif text-lg font-medium">Marlei da Rosa</h3>
+              <h3 className="text-white font-serif text-lg font-medium">Marlei da Rosa - Terapeuta</h3>
               <p className="text-[#B87333] text-xs tracking-wider uppercase mt-1">
                 Autora
               </p>
