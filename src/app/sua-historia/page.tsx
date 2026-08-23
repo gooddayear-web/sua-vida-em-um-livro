@@ -117,12 +117,13 @@ export default function SuaHistoriaLandingPage() {
         <section className="py-20 px-6 bg-neutral-900/40 border-y border-white/5">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 md:h-[400px] border border-white/10 rounded-lg overflow-hidden bg-neutral-950 flex items-center justify-center">
-              {/* Imagem de demonstração do livro físico */}
-              <div className="text-center p-6">
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-2">[ Obra Editorial Premium ]</p>
-                <p className="font-serif text-2xl text-[#B87333]">Sua Vida em um Livro™</p>
-                <p className="text-white/60 text-sm mt-2">Capa dura • Papel polén • Projeto exclusivo</p>
-              </div>
+              {/* Imagem real do livro físico */}
+              <Image 
+                src="/images/livro-exemplo.png" 
+                alt="Livro impresso Sua Vida em um Livro" 
+                fill 
+                className="object-cover"
+              />
             </div>
             <div>
               <span className="text-[#B87333] uppercase tracking-widest text-xs mb-4 block">Materialização da Memória</span>
