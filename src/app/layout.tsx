@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://suavidaemumlivro.com.br/images/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        width: 1080,
+        height: 1080,
         alt: "Sua Vida em um Livro™",
       },
     ],
@@ -49,7 +49,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      {children}
+      <body>
+        {children}
+      </body>
     </html>
   );
 }

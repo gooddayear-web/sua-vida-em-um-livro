@@ -1,0 +1,484 @@
+import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+// ==========================================
+// CONFIGURAÇÕES E METADATA
+// ==========================================
+
+export const metadata: Metadata = {
+  title: "Sua História em um Livro | Sua Vida em um Livro™",
+  description:
+    "Transformamos histórias de vida, memórias e trajetórias familiares em livros personalizados. Conte sua história. Nós ajudamos a transformá-la em uma obra que permanece.",
+  alternates: {
+    canonical: "https://suavidaemumlivro.com.br/sua-historia",
+  },
+  openGraph: {
+    title: "Sua História em um Livro | Sua Vida em um Livro™",
+    description: "Transformamos histórias de vida, memórias e trajetórias familiares em livros personalizados.",
+    url: "https://suavidaemumlivro.com.br/sua-historia",
+    siteName: "Sua Vida em um Livro™",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "https://suavidaemumlivro.com.br/images/opengraph-image.png",
+        width: 1080,
+        height: 1080,
+        alt: "Sua Vida em um Livro™",
+      },
+    ],
+  },
+};
+
+const WHATSAPP_NUMBER = "5547991305597";
+
+function getWhatsAppUrl(message: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+// ==========================================
+// COMPONENTE PRINCIPAL (SERVER COMPONENT)
+// ==========================================
+
+export default function SuaHistoriaLandingPage() {
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] text-[#FDFBF7] selection:bg-[#B87333]/30 selection:text-white font-sans overflow-x-hidden">
+      
+      {/* 1. HEADER SIMPLIFICADO */}
+      <header className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <Link href="/sua-historia" className="font-serif text-xl tracking-wide text-white">
+            Sua Vida em um Livro<span className="text-[#B87333] text-sm align-super">™</span>
+          </Link>
+          <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest text-white/60">
+            <a href="#como-funciona" className="hover:text-[#B87333] transition-colors">Como Funciona</a>
+            <a href="#formatos" className="hover:text-[#B87333] transition-colors">Projetos</a>
+            <a href="#faq" className="hover:text-[#B87333] transition-colors">Dúvidas</a>
+          </nav>
+          <a
+            href={getWhatsAppUrl("Olá! Gostaria de saber como transformar minha história em um livro.")}
+            data-event="header_whatsapp_click"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex bg-[#B87333] hover:bg-[#9a5f2a] text-white px-6 py-2.5 text-xs uppercase tracking-widest transition-all"
+          >
+            Começar Minha História
+          </a>
+        </div>
+      </header>
+
+      <main className="pt-20">
+        
+        {/* 2. HERO SECTION */}
+        <section className="relative min-h-[90vh] flex flex-col justify-center px-6 py-20">
+          <div className="absolute inset-0 z-0 opacity-20">
+             {/* TODO: Substituir por fotografia real de um livro aberto ou mãos escrevendo */}
+            <div className="w-full h-full bg-gradient-to-b from-transparent to-[#0a0a0a] absolute inset-0 z-10"></div>
+            <div className="w-full h-full bg-[url('/images/hero-bg.jpg')] bg-cover bg-center"></div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto text-center relative z-10 mt-10">
+            <span className="text-[#B87333] uppercase tracking-[0.3em] text-xs font-semibold mb-6 block">
+              Sua história merece ser preservada
+            </span>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-8">
+              E se a sua história <br className="hidden md:block" />
+              <span className="italic text-white/90">virasse um livro?</span>
+            </h1>
+            <p className="text-white/60 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed mb-12">
+              Você viveu momentos que ninguém mais viveu. Nós transformamos suas memórias, experiências e acontecimentos em uma história escrita para permanecer.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={getWhatsAppUrl("Olá! Quero transformar minha história em livro.")}
+                data-event="hero_whatsapp_click"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-[#B87333] text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#9a5f2a] transition-all text-center"
+              >
+                Quero transformar minha história
+              </a>
+              <a
+                href="#como-funciona"
+                data-event="how_it_works_click"
+                className="w-full sm:w-auto border border-white/20 text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-white/5 transition-all text-center"
+              >
+                Como funciona
+              </a>
+            </div>
+            
+            <p className="text-white/30 text-xs uppercase tracking-widest mt-12 pt-8 border-t border-white/10 flex flex-wrap justify-center gap-4">
+              <span>Entrevistas personalizadas</span>
+              <span className="hidden sm:inline">•</span>
+              <span>Escrita autoral</span>
+              <span className="hidden sm:inline">•</span>
+              <span>Revisão</span>
+              <span className="hidden sm:inline">•</span>
+              <span>Aprovação do cliente</span>
+            </p>
+          </div>
+        </section>
+
+        {/* 3. IDENTIFICAÇÃO EMOCIONAL */}
+        <section className="py-24 px-6 bg-neutral-900/30">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
+              Talvez você tenha mais história do que imagina.
+            </h2>
+            <div className="text-white/60 text-lg leading-loose space-y-4 font-light">
+              <p>Você lembra de coisas que ninguém mais lembra.</p>
+              <p>Da casa onde cresceu. Das pessoas que passaram pela sua vida.</p>
+              <p>Dos momentos difíceis. Das escolhas. Das perdas.</p>
+              <p>Das conquistas. Dos recomeços.</p>
+              <p>São memórias que fazem parte de quem você é.</p>
+              <p className="text-white/40 italic">Mas memória também pode desaparecer.</p>
+            </div>
+            <p className="text-[#B87333] text-xl md:text-2xl font-serif mt-12 mb-10">
+              E se tudo isso pudesse permanecer em um livro?
+            </p>
+          </div>
+        </section>
+
+        {/* 4. O ESQUECIMENTO (CINEMATOGRÁFICO) */}
+        <section className="py-32 px-6 border-y border-white/5">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="font-serif text-3xl md:text-5xl font-light mb-6 leading-tight">
+                O tempo não apaga apenas fotografias.
+              </h2>
+              <p className="text-[#B87333] uppercase tracking-widest text-xs mb-8">O problema do esquecimento</p>
+            </div>
+            <div className="text-white/60 text-lg leading-relaxed font-light border-l border-[#B87333]/30 pl-8">
+              <p className="mb-4">Ele também leva detalhes.</p>
+              <p className="mb-4">Vozes. Histórias. Contextos. Nomes. Sentimentos.</p>
+              <p className="mb-8">Pequenos acontecimentos que nunca foram escritos. Por isso, registrar uma história não é apenas escrever. É preservar.</p>
+              <p className="text-white text-xl font-serif italic">
+                "O que hoje está na sua memória pode amanhã existir em páginas."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. A TRANSFORMAÇÃO */}
+        <section className="py-24 px-6 text-center">
+          <h2 className="font-serif text-3xl md:text-4xl font-light mb-16">
+            Nós transformamos memória em narrativa.
+          </h2>
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="bg-neutral-900/50 p-10 w-full md:w-5/12 border border-white/5 text-left">
+              <span className="text-white/30 text-xs uppercase tracking-widest mb-6 block">Antes</span>
+              <ul className="space-y-4 text-white/50 font-light">
+                <li>• Memórias soltas</li>
+                <li>• Fotografias guardadas</li>
+                <li>• Conversas passageiras</li>
+                <li>• Acontecimentos não registrados</li>
+              </ul>
+            </div>
+            
+            <div className="text-[#B87333] text-4xl font-serif">→</div>
+            
+            <div className="bg-neutral-900/50 p-10 w-full md:w-5/12 border border-[#B87333]/30 text-left relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#B87333]/10 rounded-bl-full"></div>
+              <span className="text-[#B87333] text-xs uppercase tracking-widest mb-6 block">Depois</span>
+              <ul className="space-y-4 text-white/90 font-light">
+                <li>• Uma história organizada</li>
+                <li>• Uma narrativa envolvente</li>
+                <li>• Um livro físico premium</li>
+                <li>• Um legado para gerações</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. COMO FUNCIONA */}
+        <section id="como-funciona" className="py-24 px-6 bg-neutral-900/20 border-t border-white/5">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-5xl font-light text-center mb-20">
+              Tudo começa com uma conversa.
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              {[
+                { step: "01", title: "Conversa", desc: "Começamos ouvindo você e entendendo seu objetivo." },
+                { step: "02", title: "Entrevista", desc: "Exploramos os momentos importantes da sua trajetória." },
+                { step: "03", title: "Escrita", desc: "Transformamos suas memórias em uma narrativa literária." },
+                { step: "04", title: "Revisão", desc: "Você acompanha, ajusta e aprova todo o conteúdo." },
+                { step: "05", title: "Livro", desc: "Sua história ganha forma e permanece impressa." }
+              ].map((item, i) => (
+                <div key={i} className="relative group">
+                  <span className="text-[#B87333]/20 text-6xl font-serif absolute -top-8 -left-4 z-0 transition-colors group-hover:text-[#B87333]/40">{item.step}</span>
+                  <div className="relative z-10 pt-4 border-t border-white/10 mt-6">
+                    <h3 className="text-white text-lg font-serif mb-3">{item.title}</h3>
+                    <p className="text-white/50 text-sm font-light">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* DIFERENCIAL */}
+            <div className="mt-32 max-w-3xl mx-auto text-center bg-[#B87333]/5 border border-[#B87333]/20 p-12">
+              <h3 className="font-serif text-2xl md:text-3xl mb-6">Você não precisa saber escrever.</h3>
+              <div className="text-white/70 font-light leading-relaxed space-y-2 mb-8">
+                <p>Essa parte é nossa.</p>
+                <p>Você precisa apenas contar. Nós fazemos as perguntas, organizamos as memórias, encontramos os momentos importantes, construímos a narrativa e transformamos tudo isso em uma obra.</p>
+              </div>
+              <p className="text-[#B87333] text-lg font-serif italic">
+                "Você viveu a história. Nós ajudamos a colocá-la em páginas."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. PARA QUEM É (3 BLOCOS COMERCIAIS) */}
+        <section className="py-24 px-6 border-t border-white/5">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-center mb-16">
+              Qual história você quer preservar?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              {/* Bloco 1 */}
+              <div className="border border-white/10 p-10 flex flex-col justify-between hover:border-[#B87333]/50 transition-colors">
+                <div>
+                  <h3 className="text-xl font-serif text-[#B87333] mb-4">Sua Própria História</h3>
+                  <p className="text-white/60 font-light mb-8">"Quero registrar minha trajetória, meus aprendizados e o caminho que percorri."</p>
+                </div>
+                <a
+                  href={getWhatsAppUrl("Olá! Conheci o Sua Vida em um Livro e quero transformar minha própria história em livro.")}
+                  data-event="my_story_click"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center border border-white/20 text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+                >
+                  Minha História
+                </a>
+              </div>
+
+              {/* Bloco 2 */}
+              <div className="border border-[#B87333]/40 bg-[#B87333]/5 p-10 flex flex-col justify-between transform md:-translate-y-4">
+                <div>
+                  <h3 className="text-xl font-serif text-[#B87333] mb-4">História dos Meus Pais</h3>
+                  <p className="text-white/80 font-light mb-8">"Quero preservar a trajetória de quem veio antes de mim e me deu a base de tudo."</p>
+                </div>
+                <a
+                  href={getWhatsAppUrl("Olá! Quero saber como transformar a história dos meus pais em um livro.")}
+                  data-event="parents_story_click"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-[#B87333] text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-[#9a5f2a] transition-all"
+                >
+                  História dos Meus Pais
+                </a>
+              </div>
+
+              {/* Bloco 3 */}
+              <div className="border border-white/10 p-10 flex flex-col justify-between hover:border-[#B87333]/50 transition-colors">
+                <div>
+                  <h3 className="text-xl font-serif text-[#B87333] mb-4">História da Família</h3>
+                  <p className="text-white/60 font-light mb-8">"Quero reunir memórias e conectar gerações em uma única obra monumental."</p>
+                </div>
+                <a
+                  href={getWhatsAppUrl("Olá! Quero saber como criar um livro com a história da minha família.")}
+                  data-event="family_story_click"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center border border-white/20 text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+                >
+                  História da Família
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* 8. SEÇÃO EMOCIONAL (FOCO PAIS) */}
+        <section className="py-32 px-6 bg-[url('/images/texture-bg.jpg')] bg-cover bg-center relative border-y border-white/5">
+          <div className="absolute inset-0 bg-[#0a0a0a]/95"></div>
+          <div className="max-w-3xl mx-auto text-center relative z-10">
+            <h2 className="font-serif text-3xl md:text-5xl font-light mb-10 text-[#FDFBF7]">
+              Seus filhos conhecem toda a sua história?
+            </h2>
+            <div className="text-white/70 font-light text-lg leading-loose text-left md:text-center space-y-2 mb-12">
+              <p>Eles conhecem algumas partes.</p>
+              <p>Mas talvez não conheçam onde você dormia quando era criança.</p>
+              <p>O que você sonhava. Qual foi sua primeira grande dificuldade.</p>
+              <p>Quem ajudou você. Quem você perdeu.</p>
+              <p>Como conheceu o amor da sua vida. Como conseguiu chegar até aqui.</p>
+            </div>
+            <div className="border-t border-[#B87333]/30 pt-10">
+              <p className="text-2xl font-serif text-white italic mb-10">
+                "Um dia eles podem querer saber.<br />E talvez você possa deixar a resposta em um livro."
+              </p>
+              <a
+                href={getWhatsAppUrl("Olá! Quero registrar minha história para minha família.")}
+                data-event="emotional_cta_click"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#B87333] text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#9a5f2a] transition-all"
+              >
+                Quero registrar essa história
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* 9. PROVA SOCIAL (MARLEI) */}
+        <section className="py-24 px-6">
+          <div className="max-w-4xl mx-auto bg-neutral-900/40 border border-[#B87333]/20 p-10 md:p-16 text-center">
+            <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-[#B87333] mb-8">
+              {/* Utilizando imagem real mapeada na instrução */}
+              <Image 
+                src="/images/marlei-foto.png" 
+                alt="Marlei da Rosa" 
+                width={80} 
+                height={80} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-[#FDFBF7]/90 text-lg md:text-xl leading-relaxed italic font-serif mb-8">
+              "Esse projeto é sensacional porque ele não apenas relata acontecimentos, mas acompanha a transformação de uma pessoa ao longo da vida... O livro deixa de ser apenas uma autobiografia e passa a ser uma obra sobre sobrevivência, traumas, recomeço e, acima de tudo, sobre reconhecer o que nos faltou na infância para oferecermos algo diferente à geração seguinte."
+            </p>
+            <h3 className="text-white font-serif text-lg font-medium">Marlei da Rosa</h3>
+            <p className="text-[#B87333] text-xs tracking-wider uppercase mt-1">Autora</p>
+          </div>
+        </section>
+
+        {/* 10. FORMATOS DE PROJETO */}
+        <section id="formatos" className="py-24 px-6 border-t border-white/5 bg-neutral-950">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="text-[#B87333] text-xs uppercase tracking-[0.2em]">Obras Exclusivas</span>
+              <h2 className="font-serif text-3xl md:text-4xl font-light mt-4">Formatos de Projeto</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Registro", desc: "Para preservar a história de forma mais direta e objetiva.", msg: "Registro" },
+                { title: "Memórias", desc: "Para uma narrativa biográfica mais profunda e detalhada.", msg: "Memórias", highlight: true },
+                { title: "Legado", desc: "Para uma experiência completa de preservação com alto requinte.", msg: "Legado" },
+                { title: "Obra da Família", desc: "Para unir diferentes gerações em um único volume.", msg: "a Obra da Família" },
+                { title: "Colecionador", desc: "Para projetos com acabamentos físicos e editoriais premium.", msg: "Colecionador" },
+                { title: "Empresarial", desc: "Para empresas, fundadores e memória institucional.", msg: "Empresarial" },
+              ].map((fmt, i) => (
+                <div key={i} className={`p-8 border ${fmt.highlight ? 'border-[#B87333]/50 bg-[#B87333]/5' : 'border-white/10 hover:border-white/30'} transition-all flex flex-col justify-between`}>
+                  <div>
+                    <h3 className={`font-serif text-2xl mb-3 ${fmt.highlight ? 'text-[#B87333]' : 'text-white'}`}>{fmt.title}</h3>
+                    <p className="text-white/60 font-light text-sm mb-8">{fmt.desc}</p>
+                  </div>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                    <span className="text-xs text-white/40 uppercase tracking-widest">Projeto Personalizado</span>
+                    <a
+                      href={getWhatsAppUrl(`Olá! Quero conhecer o projeto ${fmt.msg}.`)}
+                      data-event="pricing_click"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#B87333] text-sm hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      Consultar <span>→</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 11. CONFIDENCIALIDADE */}
+        <section className="py-20 px-6 border-t border-white/5 bg-neutral-900/20 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-serif text-3xl font-light mb-6">Sua história continua sendo sua.</h2>
+            <div className="text-white/60 font-light space-y-2 text-lg">
+              <p>Você decide o que será contado.</p>
+              <p>Você decide o que será publicado.</p>
+              <p>Você decide quem poderá ler.</p>
+              <p className="text-white/90 font-medium mt-4 pt-4 border-t border-white/10">Nada é publicado sem sua aprovação final.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 12. FAQ (SEM CLIENT JS) */}
+        <section id="faq" className="py-24 px-6 border-t border-white/5">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-center mb-16">Dúvidas Frequentes</h2>
+            <div className="space-y-4">
+              {[
+                { q: "Preciso saber escrever?", a: "Não. Nós conduzimos entrevistas com você, gravamos as conversas e nossa equipe editorial transforma seus relatos em um texto literário, estruturado e envolvente." },
+                { q: "A história fica em sigilo?", a: "Totalmente. Trabalhamos com cláusulas de confidencialidade rigorosas. A história é sua e só será lida por quem você permitir." },
+                { q: "Posso fazer para meus pais ou avós?", a: "Sim! É um dos projetos mais procurados. Conduzimos as entrevistas com eles de forma humanizada e paciente, criando uma bela homenagem." },
+                { q: "Posso revisar a história antes de imprimir?", a: "Sim. Nenhuma obra é encaminhada para a gráfica sem a sua leitura, aprovação e consentimento formal de cada capítulo." },
+                { q: "Quanto custa um projeto?", a: "Como as histórias têm tamanhos e complexidades diferentes, os valores variam. Temos planos a partir de formatos mais diretos (Registro) até obras extensas de gerações (Legado). Fale conosco no WhatsApp para indicarmos o melhor formato." }
+              ].map((faq, i) => (
+                <details key={i} className="group bg-neutral-900/30 border border-white/10 p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer" data-event="faq_open">
+                  <summary className="flex items-center justify-between text-lg font-serif text-white/90 font-light">
+                    {faq.q}
+                    <span className="text-[#B87333] group-open:rotate-45 transition-transform text-2xl font-sans leading-none">+</span>
+                  </summary>
+                  <p className="mt-4 text-white/60 font-light leading-relaxed pl-2 border-l border-[#B87333]/30">
+                    {faq.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 13. CTA FINAL */}
+        <section className="py-32 px-6 bg-gradient-to-b from-[#0a0a0a] to-neutral-900 text-center border-t border-white/5">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-4xl md:text-5xl font-light mb-6">Algumas histórias não deveriam desaparecer.</h2>
+            <p className="text-white/60 text-lg font-light mb-12">Se você sempre pensou em registrar sua trajetória, talvez este seja o momento de começar.</p>
+            
+            <a
+              href={getWhatsAppUrl("Olá! Tomei a decisão de transformar minha história em livro e quero começar.")}
+              data-event="final_cta_click"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#B87333] hover:bg-[#9a5f2a] text-white px-10 py-5 text-sm uppercase tracking-widest transition-all mb-4 shadow-[0_0_40px_rgba(184,115,51,0.2)]"
+            >
+              Quero Transformar Minha História em Livro
+            </a>
+            <p className="text-white/30 text-xs uppercase tracking-widest mt-4">Comece com uma conversa sem compromisso.</p>
+          </div>
+        </section>
+      </main>
+
+      {/* 14. FOOTER SIMPLIFICADO */}
+      <footer className="py-10 px-6 border-t border-white/10 bg-[#0a0a0a] text-center pb-24 md:pb-10">
+        <p className="font-serif text-lg text-white mb-2">Sua Vida em um Livro™</p>
+        <p className="text-white/40 text-xs">Todos os direitos reservados © {new Date().getFullYear()}</p>
+      </footer>
+
+      {/* 15. FLOATING WHATSAPP (DESKTOP) */}
+      <a
+        href={getWhatsAppUrl("Olá! Estava navegando na página e gostaria de falar sobre minha história.")}
+        data-event="floating_whatsapp_click"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden md:flex fixed bottom-8 right-8 bg-[#25D366] text-white py-3 px-5 rounded-full shadow-lg hover:scale-105 transition-transform items-center gap-3 z-50 font-medium"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+        Falar sobre minha história
+      </a>
+
+      {/* 16. CTA FIXO MOBILE */}
+      <div className="md:hidden fixed bottom-0 left-0 w-full bg-[#111] border-t border-white/10 p-4 z-50 flex items-center justify-between">
+        <span className="text-white/80 text-xs font-medium">Sua história merece permanecer.</span>
+        <a
+          href={getWhatsAppUrl("Olá! Quero saber como transformar minha história em um livro.")}
+          data-event="mobile_cta_click"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#B87333] text-white px-6 py-2.5 text-xs uppercase tracking-widest font-semibold"
+        >
+          Começar
+        </a>
+      </div>
+
+    </div>
+  );
+}
