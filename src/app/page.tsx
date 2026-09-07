@@ -35,7 +35,7 @@ export default function Home() {
     
     const urlWhatsApp = "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(textoMensagem);
 
-    // Dispara a conversão diretamente para o Google Ads
+    // Dispara a conversão exata para o Google Ads
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-18406777513/o4_sCL_8jvAcEKnFhMlE'
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
 
           <button
-            onClick={() => handleOpenModal('Projeto Personalizado')}
+            onClick={() => { setSelectedPlan('Projeto Personalizado'); setIsModalOpen(true); }}
             className="hidden md:inline-block bg-[#B87333] text-white text-sm md:text-base tracking-[0.2em] uppercase px-12 py-5 transition-all duration-700 hover:bg-[#B87333]/90 shadow-2xl cursor-pointer font-light"
           >
             Quero Preservar Minha História
@@ -291,8 +291,7 @@ export default function Home() {
       </section>
 
       {/* Seção PLANOS (Modularizada) */}
-      <Planos onSelectPlan={(planName) => handleOpenModal(planName)} />
-
+<Planos onSelectPlan={(planName) => { setSelectedPlan(planName); setIsModalOpen(true); }} />
       {/* Depoimentos - Em desenvolvimento */}
       <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
         <div className="text-center mb-16">
@@ -388,8 +387,7 @@ export default function Home() {
           
           <div className="pt-4 pb-12">
             <button
-              onClick={() => handleOpenModal('Projeto Personalizado')}
-              className="bg-[#B87333] text-white text-sm md:text-base tracking-[0.2em] uppercase px-14 py-5 transition-all duration-700 hover:bg-[#B87333]/90 shadow-2xl cursor-pointer font-light"
+onClick={() => { setSelectedPlan('Projeto Personalizado'); setIsModalOpen(true); }}              className="bg-[#B87333] text-white text-sm md:text-base tracking-[0.2em] uppercase px-14 py-5 transition-all duration-700 hover:bg-[#B87333]/90 shadow-2xl cursor-pointer font-light"
             >
               Iniciar Meu Projeto
             </button>
@@ -413,8 +411,7 @@ export default function Home() {
       {/* CTA Fixo Inferior Mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 h-[80px] bg-[#050505]/95 border-t border-[#B87333]/30 z-40 flex items-center px-6 backdrop-blur-md">
         <button
-          onClick={() => handleOpenModal('Projeto Personalizado')}
-          className="w-full bg-[#B87333] text-white text-xs uppercase tracking-[0.2em] py-4 shadow-xl cursor-pointer font-medium"
+onClick={() => { setSelectedPlan('Projeto Personalizado'); setIsModalOpen(true); }}          className="w-full bg-[#B87333] text-white text-xs uppercase tracking-[0.2em] py-4 shadow-xl cursor-pointer font-medium"
         >
           Iniciar Meu Projeto
         </button>
