@@ -25,11 +25,6 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleOpenModal = (planName = 'Projeto Personalizado') => {
-    setSelectedPlan(planName);
-    setIsModalOpen(true);
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -39,6 +34,13 @@ export default function Home() {
     const textoMensagem = `Olá!\n\nMeu nome é *${formData.name}*.\n\nAcabei de conhecer a Sua Vida em um Livro™ e gostaria de iniciar meu projeto.\n\n📖 Projeto escolhido:\n${selectedPlan}\n\n🎯 Destinado para:\n${formData.target}\n\n📖 Resumo da história:\n${formData.story}\n\n📍 Conheci vocês através de:\n${formData.origin}\n\n📧 E-mail:\n${formData.email}\n\n📱 WhatsApp:\n${formData.whatsapp}\n\nGostaria de receber mais informações sobre como preservar minha história.`;
     
     const urlWhatsApp = "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(textoMensagem);
+
+    // Dispara a conversão diretamente para o Google Ads
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-18406777513/o4_sCL_8jvAcEKnFhMlE'
+      });
+    }
 
     setTimeout(() => {
       setIsSubmitting(false);
