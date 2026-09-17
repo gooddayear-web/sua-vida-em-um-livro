@@ -292,16 +292,21 @@ export default function Home() {
 
       {/* Seção PLANOS (Modularizada) */}
 <Planos onSelectPlan={(planName) => { setSelectedPlan(planName); setIsModalOpen(true); }} />
-      {/* Depoimentos - Em desenvolvimento */}
+     {/* Depoimentos */}
       <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
+        
+        {/* Título da Seção */}
         <div className="text-center mb-16">
           <span className="text-[#B87333] uppercase tracking-[0.3em] text-xs block mb-4">Depoimentos</span>
           <h2 className="font-serif text-3xl md:text-5xl font-light">Quem confiou sua história a nós</h2>
-        {/* Card 3 - Alessandra Ogliara */}
+        </div>
+
+        {/* Grid de Cards (Essa linha tinha sumido!) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Card 1 - Alessandra Ogliara */}
           <div className="border border-[#B87333]/40 bg-neutral-900/40 p-8 md:p-10 text-center relative overflow-hidden flex flex-col items-center justify-between min-h-[350px]">
             <div className="flex flex-col items-center w-full">
-              
-              {/* Foto da Alessandra */}
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#B87333] mb-4 shadow-xl">
                 <img 
                   src="/images/alessandra-foto.png" 
@@ -309,25 +314,24 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-
               <span className="bg-[#B87333]/20 text-[#B87333] px-3 py-1 text-[10px] uppercase tracking-widest mb-4 font-medium">
-                Sua Vida em um Livro™
+                Novo Ritmo, novo ciclo
               </span>
-
               <p className="text-[#FDFBF7]/90 text-sm leading-relaxed italic font-serif mb-6 text-left md:text-center">
-                "Participar do projeto Sua Vida em um Livro é uma experiência profunda e transformadora de autoconhecimento. O processo de revisitar a própria trajetória, desde a infância até o presente, passando por crenças, traumas e aprendizados, permite ressignificar o que ainda interfere, trava ou impulsiona a nossa vida hoje. A condução sensível e os questionamentos certeiros propostos ao longo do trabalho tornam essa jornada reflexiva extremamente rica e gratificante. É um convite para enxergar a própria história com mais valor, descobrindo aspectos e ensinamentos que haviam ficado guardados ao longo do tempo. Mais do que um resgate de memórias, Sua Vida em um Livro revela-se um aprendizado sobre si mesmo, sendo uma vivência altamente recomendada para todos que desejam olhar para o passado e transformar a própria jornada em um legado inestimável."
+                "Participar do projeto Sua Vida em um Livro é uma experiência profunda e transformadora de autoconhecimento. O processo de revisitar a própria trajetória permite ressignificar o que ainda interfere, trava ou impulsiona a nossa vida hoje."
               </p>
             </div>
-
             <div className="border-t border-white/10 pt-4 w-full">
-              <h3 className="text-white font-serif text-lg font-medium">Alessandra Ogliara</h3>
+              <h3 className="text-white font-serif text-lg font-medium">Alessandra Ogliara - Professora de Balé</h3>
               <p className="text-[#B87333] text-xs tracking-wider uppercase mt-1">
-                Autora / Participante do Projeto
+                Autora 
               </p>
             </div>
           </div>
               
-              {/* Foto da Marlei */}
+          {/* Card 2 - Marlei da Rosa (A estrutura externa dela tinha sumido!) */}
+          <div className="border border-[#B87333]/40 bg-neutral-900/40 p-8 md:p-10 text-center relative overflow-hidden flex flex-col items-center justify-between min-h-[350px]">
+            <div className="flex flex-col items-center w-full">
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#B87333] mb-4 shadow-xl">
                 <img 
                   src="/images/marlei-foto.png" 
@@ -335,16 +339,13 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-
               <span className="bg-[#B87333]/20 text-[#B87333] px-3 py-1 text-[10px] uppercase tracking-widest mb-4 font-medium">
                 A Travessia Doeu
               </span>
-
               <p className="text-[#FDFBF7]/90 text-sm leading-relaxed italic font-serif mb-6 text-left md:text-center">
-                "Esse projeto é sensacional porque ele não apenas relata acontecimentos, mas acompanha a transformação de uma pessoa ao longo da vida, da criança que precisou sobreviver à mulher que começou a olhar para a própria história com consciência. O grande diferencial é estruturar tudo isso sem transformar a dor em espetáculo. O livro deixa de ser apenas uma autobiografia e passa a ser uma obra sobre sobrevivência, traumas, recomeço e, acima de tudo, sobre reconhecer o que nos faltou na infância para oferecermos algo diferente à geração seguinte."
+                "Esse projeto é sensacional porque ele não apenas relata acontecimentos, mas acompanha a transformação de uma pessoa ao longo da vida, da criança que precisou sobreviver à mulher que começou a olhar para a própria história com consciência."
               </p>
             </div>
-
             <div className="border-t border-white/10 pt-4 w-full">
               <h3 className="text-white font-serif text-lg font-medium">Marlei da Rosa - Terapeuta</h3>
               <p className="text-[#B87333] text-xs tracking-wider uppercase mt-1">
@@ -352,6 +353,7 @@ export default function Home() {
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
