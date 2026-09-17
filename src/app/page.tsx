@@ -297,16 +297,35 @@ export default function Home() {
         <div className="text-center mb-16">
           <span className="text-[#B87333] uppercase tracking-[0.3em] text-xs block mb-4">Depoimentos</span>
           <h2 className="font-serif text-3xl md:text-5xl font-light">Quem confiou sua história a nós</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="border border-white/10 bg-neutral-900/30 p-12 text-center relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
-              <span className="bg-[#B87333]/20 text-[#B87333] px-3 py-1 text-[10px] uppercase tracking-widest mb-4">Em desenvolvimento</span>
-              <h3 className="text-white/50 font-serif text-xl">Projeto Alessandra</h3>
-              <p className="text-white/30 text-sm mt-2">Espaço reservado para foto, vídeo e depoimento</p>
-          </div>
-          {/* Card 2 - Marlei da Rosa - Terapeuta */}
+        {/* Card 3 - Alessandra Ogliara */}
           <div className="border border-[#B87333]/40 bg-neutral-900/40 p-8 md:p-10 text-center relative overflow-hidden flex flex-col items-center justify-between min-h-[350px]">
             <div className="flex flex-col items-center w-full">
+              
+              {/* Foto da Alessandra */}
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#B87333] mb-4 shadow-xl">
+                <img 
+                  src="/images/alessandra-foto.png" 
+                  alt="Alessandra Ogliara" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <span className="bg-[#B87333]/20 text-[#B87333] px-3 py-1 text-[10px] uppercase tracking-widest mb-4 font-medium">
+                Sua Vida em um Livro™
+              </span>
+
+              <p className="text-[#FDFBF7]/90 text-sm leading-relaxed italic font-serif mb-6 text-left md:text-center">
+                "Participar do projeto Sua Vida em um Livro é uma experiência profunda e transformadora de autoconhecimento. O processo de revisitar a própria trajetória, desde a infância até o presente, passando por crenças, traumas e aprendizados, permite ressignificar o que ainda interfere, trava ou impulsiona a nossa vida hoje. A condução sensível e os questionamentos certeiros propostos ao longo do trabalho tornam essa jornada reflexiva extremamente rica e gratificante. É um convite para enxergar a própria história com mais valor, descobrindo aspectos e ensinamentos que haviam ficado guardados ao longo do tempo. Mais do que um resgate de memórias, Sua Vida em um Livro revela-se um aprendizado sobre si mesmo, sendo uma vivência altamente recomendada para todos que desejam olhar para o passado e transformar a própria jornada em um legado inestimável."
+              </p>
+            </div>
+
+            <div className="border-t border-white/10 pt-4 w-full">
+              <h3 className="text-white font-serif text-lg font-medium">Alessandra Ogliara</h3>
+              <p className="text-[#B87333] text-xs tracking-wider uppercase mt-1">
+                Autora / Participante do Projeto
+              </p>
+            </div>
+          </div>
               
               {/* Foto da Marlei */}
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#B87333] mb-4 shadow-xl">
