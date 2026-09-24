@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import WhatsAppLink from "./WhatsAppLink";
 
 // ==========================================
 // CONFIGURAÇÕES E METADATA
@@ -93,7 +94,7 @@ export default function SuaHistoriaLandingPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <WhatsAppLink
                 href={getWhatsAppUrl("Olá! Conheci o Sua Vida em um Livro e quero transformar minha história em livro.", "hero")}
                 data-event="hero_whatsapp_click"
                 target="_blank"
@@ -101,7 +102,7 @@ export default function SuaHistoriaLandingPage() {
                 className="w-full sm:w-auto bg-[#B87333] text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#9a5f2a] transition-all text-center shadow-lg"
               >
                 Quero transformar minha história em livro
-              </a>
+              </WhatsAppLink>
               <a
                 href="#como-funciona"
                 data-event="how_it_works_click"
